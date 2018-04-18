@@ -98,13 +98,13 @@ button:hover {
     display: inline-block;
 }
 
-#square {
+#squareRoot {
     width: 25%;
     height: 100%;
     display: inline-block;
 }
 
-#raised {
+#square {
     width: 25%;
     height: 100%;
     display: inline-block;

@@ -8,19 +8,19 @@ window.addEventListener("load", function () {
             history: [], // array consisting of all calculations made.
             memory: "",
             historySwitch: "enableHistory",
-            disableSquare: false,
+            disableSquareRoot: false,
             opacity: "",
         },
         methods: {
             clear: function (evt) {
               //resets everything but history.
-                this.disableSquare = false;
+                this.disableSquareRoot = false;
                 this.opacity = "";
                 this.result = "";
                 this.memory = "";
                 this.toCalc = [];
             },
-            square: function(evt) {
+            squareRoot: function(evt) {
                     //first calculate numbers entered prior to square root calculation.
                     if(this.toCalc.length != 0){
                         this.equals();
@@ -39,7 +39,7 @@ window.addEventListener("load", function () {
                         this.result = "";
                     }
             },
-            raised: function(evt) {
+            square: function(evt) {
               //first calculate numbers entered prior to square calculation.
               if(this.toCalc.length != 0){
                   this.equals();
@@ -58,6 +58,13 @@ window.addEventListener("load", function () {
                   this.history.push(`${this.result} ^2 = ${this.memory}`);
                   this.result = "";
 
+              }
+              if(this.memory < 0){
+                this.disableSquareRoot = true;
+                this.opacity = "lowerOpacity";
+              }else{
+                this.disableSquareRoot = false;
+                this.opacity = "";
               }
             },
             divide: function (evt) {
@@ -102,7 +109,7 @@ window.addEventListener("load", function () {
                 //check if a negative value should be calculated.
                 if(!this.result && !this.memory){
                   this.toCalc.push("-");
-                  this.disableSquare = true;
+                  this.disableSquareRoot = true;
                   this.opacity = "lowerOpacity";
                 }
                 this.memory = "";
@@ -193,10 +200,10 @@ window.addEventListener("load", function () {
                 this.clear();
                 this.memory = calculated;
                 if(this.memory > 0){
-                  this.disableSquare = false;
+                  this.disableSquareRoot = false;
                   this.opacity = "";
                 }else{
-                  this.disableSquare = true;
+                  this.disableSquareRoot = true;
                   this.opacity = "lowerOpacity";
                 }
                 this.history.push(`${toHistory} = ${calculated}`);
