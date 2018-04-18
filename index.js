@@ -33,8 +33,6 @@ window.addEventListener("load", function () {
                         this.result = "";
                     }
                     if(this.result){
-                        console.log(this.result);
-                        console.log(Math.sqrt(this.result));
                         let temp = (Math.round(Math.sqrt(this.result)*10)/10);
                         this.memory = temp;
                         this.history.push(`${this.result} √ ${this.memory}`);
@@ -146,16 +144,13 @@ window.addEventListener("load", function () {
                 return;
               }
                 this.toCalc.push(this.result);
-                console.log("före while", this.toCalc);
                 //if last index of this.toCalc is not a number, remove it.
                 while(this.toCalc[this.toCalc.length-1] == "+" ||
                     this.toCalc[this.toCalc.length-1] == "-" ||
                     this.toCalc[this.toCalc.length-1] == "*" ||
                     this.toCalc[this.toCalc.length-1] == "/" ||
                     this.toCalc[this.toCalc.length-1] == ""){
-                      console.log("går in i pop med: ", this.toCalc);
                       this.toCalc.pop();
-                      console.log("efter pop: ", this.toCalc);
                   }
                 let toHistory = "";
 
