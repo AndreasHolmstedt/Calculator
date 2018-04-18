@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>calculator</title>
+    <meta charset="utf-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="index.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+    <script src="index.js" type="text/javascript"></script>
+</head>
+<body>
+    <div id="root">
+
+        <div id="calculator">
+            <div id="resultWrapper">
+               <div id="result">{{ result }}</div>
+               <div id="memory">{{ memory }}</div>
+            </div>
+            <div id="topOpts">
+                <button id="reset" @click="clear">C</button>
+                <button id="square" @click="square">&#8730;</button>
+                <button id="raised" @click="raised">^2</button>
+                <button id="divide" @click="divide">%</button>
+            </div>
+
+            <div class="midOpts">
+                <button id="nr9" @click="nr9">9</button>
+                <button id="nr8" @click="nr8">8</button>
+                <button id="nr7" @click="nr7">7</button>
+                <button id="multiply" @click="multiply">*</button>
+            </div>
+
+            <div class="midOpts">
+                <button id="nr6" @click="nr6">6</button>
+                <button id="nr5" @click="nr5">5</button>
+                <button id="nr4" @click="nr4">4</button>
+                <button id="subtract" @click="subtract">-</button>
+            </div>
+
+              <div class="midOpts">
+                <button id="nr3" @click="nr3">3</button>
+                <button id="nr2" @click="nr2">2</button>
+                <button id="nr1" @click="nr1">1</button>
+                <button id="add" @click="add">+</button>
+            </div>
+
+            <div id="botOpts">
+                <button id="nr0" @click="nr0">0</button>
+                <button id="comma" @click="comma">,</button>
+                <button id="showHistory" @click="showHistory">🖹</button>
+                <button id="equals" @click="equals">=</button>
+            </div>
+        </div>
+        <ul v-bind:class="historySwitch">
+            <li v-for="x in history">{{ x }}</li>
+        </ul>
+
+    </div>
+
+</body>
+</html>

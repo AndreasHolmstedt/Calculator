@@ -1,0 +1,241 @@
+body {
+    background-color: #fafafa;
+}
+
+#root {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0px;
+}
+
+button {
+    font-size: 2em;
+    margin: 2.5px;
+    padding: 0px;
+    outline: none;
+    background-color: slategray;
+    border: none;
+    color: lightcoral;
+    transition: color .5s, background-color .5s;
+}
+
+button:hover {
+    color: grey;
+    background-color: lightcoral;
+}
+
+#calculator {
+    margin: 0px;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid grey;
+    width: 95%;
+    height: 95vh;
+    max-width: 400px;
+    max-height: 700px;
+    background: linear-gradient(45deg, lightcoral 50%, coral);
+}
+
+#history {
+    border-bottom: 1px solid grey;
+    width: 100%;
+    height: 10%;
+    font-size: 1.5em;
+    text-align: right;
+    word-wrap:break-word;
+    overflow-y: auto;
+}
+
+
+#resultWrapper {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    height: 20%;
+    border-bottom: 2px solid slategrey;
+    margin-bottom: 2px;
+}
+
+#result {
+    padding-top: .5em;
+    padding-right: .2em;
+    font-size: 3em;
+    text-align: right;
+    vertical-align: sub;
+    color: slategray;
+}
+
+#memory {
+  padding-top: .5em;
+  padding-right: .2em;
+  font-size: 3em;
+  text-align: right;
+  vertical-align: sub;
+  color: slategray;
+}
+#lastAction {
+    font-size: 1em;
+}
+
+#topOpts {
+    width: 100%;
+    height: 16%;
+    margin: 0px;
+    padding: 0px;
+    display: flex;
+}
+
+#reset {
+    width: 25%;
+    height: 100%;
+    display: inline-block;
+}
+
+#square {
+    width: 25%;
+    height: 100%;
+    display: inline-block;
+}
+
+#raised {
+    width: 25%;
+    height: 100%;
+    display: inline-block;
+}
+
+#divide {
+    width: 25%;
+    height: 100%;
+    display: inline-block;
+}
+
+.midOpts {
+    width: 100%;
+    height: 16%;
+    margin: 0px;
+    padding: 0px;
+    display: flex;
+    margin-top: 5px;
+}
+
+.midOpts > button {
+    width: 100%;
+    height: 100%;
+    display: inline-block;
+}
+
+#botOpts {
+    width: 100%;
+    height: 16%;
+    margin: 0px;
+    padding: 0px;
+    display: flex;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+#nr0 {
+    width: 25%;
+    height: 100%;
+    display: inline-block;
+}
+
+#comma {
+    width: 25%;
+    height: 100%;
+}
+
+#showHistory {
+    width: 25%;
+    height: 100%;
+}
+
+#equals {
+    width: 25%;
+    height: 100%;
+    display: inline-block;
+}
+
+.enableHistory {
+  border-right: 1px solid grey;
+  border-top: 1px solid grey;
+  border-bottom: 1px solid grey;
+  background: linear-gradient(-90deg, lightcoral, coral );
+  overflow-y: auto;
+  width: 50%;
+  height: 95vh;
+  max-width: 400px;
+  max-height: 700px;
+  transition: opacity .5s;
+  opacity: 1;
+  color: slategray;
+  font-size: 2em;
+  list-style: none;
+  -webkit-margin-after: 0px;
+  -webkit-margin-before: 0px;
+  -webkit-margin-start: 0px;
+  -webkit-margin-end: 0px;
+  -webkit-padding-start: 0px;
+}
+
+.disableHistory {
+  border-right: 1px solid grey;
+  border-top: 1px solid grey;
+  border-bottom: 1px solid grey;
+  background: linear-gradient(-90deg, lightcoral, coral );
+  overflow-y: auto;
+  width: 50%;
+  height: 95vh;
+  max-width: 400px;
+  max-height: 700px;
+  transition: opacity .5s;
+  opacity: 0;
+  color: slategray;
+  font-size: 2em;
+  list-style: none;
+  -webkit-margin-after: 0px;
+  -webkit-margin-before: 0px;
+  -webkit-margin-start: 0px;
+  -webkit-margin-end: 0px;
+  -webkit-padding-start: 0px;
+}
+
+@media (max-width: 600px){
+  #root {
+    flex-direction: column;
+  }
+
+  #calculator {
+    width: 100%
+  }
+
+  .enableHistory {
+    display: inline;
+    border-top: none;
+    border-left: 1px solid grey;
+    margin: 0px;
+    width: 100%;
+    max-width: 400px;
+    -webkit-margin-after: 0px;
+    -webkit-margin-before: 0px;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+    -webkit-padding-start: 0px;
+}
+  }
+
+  .disableHistory {
+    display: inline;
+    border-top: none;
+    border-left: 1px solid grey;
+    margin: 0px;
+    width: 100%;
+    max-width: 400px;
+    -webkit-margin-after: 0px;
+    -webkit-margin-before: 0px;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+    -webkit-padding-start: 0px;
+  }
+}
