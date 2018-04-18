@@ -140,15 +140,20 @@ window.addEventListener("load", function () {
                 return;
               }
 
-              //if last index of this.toCalc is not a number, remove it.
-              while(this.toCalc[this.toCalc.length-1] == "+" ||
-                  this.toCalc[this.toCalc.length-1] == "-" ||
-                  this.toCalc[this.toCalc.length-1] == "*" ||
-                  this.toCalc[this.toCalc.length-1] == "/"){
-                    this.toCalc.pop();
-                }
+
 
                 this.toCalc.push(this.result);
+                console.log("före while", this.toCalc);
+                //if last index of this.toCalc is not a number, remove it.
+                while(this.toCalc[this.toCalc.length-1] == "+" ||
+                    this.toCalc[this.toCalc.length-1] == "-" ||
+                    this.toCalc[this.toCalc.length-1] == "*" ||
+                    this.toCalc[this.toCalc.length-1] == "/" ||
+                    this.toCalc[this.toCalc.length-1] == ""){
+                      console.log("går in i pop med: ", this.toCalc);
+                      this.toCalc.pop();
+                      console.log("efter pop: ", this.toCalc);
+                  }
                 let toHistory = "";
 
                 for(let i in this.toCalc){
