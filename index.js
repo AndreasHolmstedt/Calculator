@@ -59,7 +59,7 @@ window.addEventListener("load", function () {
               }
             },
             divide: function (evt) {
-            
+
                 // add / to the calculation.
                 if(this.memory){
                   this.toCalc.push(this.memory);
@@ -108,13 +108,11 @@ window.addEventListener("load", function () {
 
                 // add + to the calculation.
                 if(this.memory){
-                  console.log("går in i this.memory")
                   this.toCalc.push(this.memory);
                   this.toCalc.push("+");
                   this.memory = "";
                 }
                 if(this.result){
-                  console.log("går in i this.result")
                     this.toCalc.push(this.result);
                     this.toCalc.push("+");
                     this.result = "";
@@ -143,7 +141,7 @@ window.addEventListener("load", function () {
               }
 
               //if last index of this.toCalc is not a number, remove it.
-              if(this.toCalc[this.toCalc.length-1] == "+" ||
+              while(this.toCalc[this.toCalc.length-1] == "+" ||
                   this.toCalc[this.toCalc.length-1] == "-" ||
                   this.toCalc[this.toCalc.length-1] == "*" ||
                   this.toCalc[this.toCalc.length-1] == "/"){
