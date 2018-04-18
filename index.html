@@ -18,7 +18,7 @@
             </div>
             <div id="topOpts">
                 <button id="reset" @click="clear">C</button>
-                <button id="square" @click="square">&#8730;</button>
+                <button id="square" @click="square" v-bind:disabled="disableSquare" v-bind:class="opacity">&#8730;</button>
                 <button id="raised" @click="raised">^2</button>
                 <button id="divide" @click="divide">%</button>
             </div>

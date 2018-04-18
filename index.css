@@ -1,5 +1,6 @@
 body {
-    background-color: #fafafa;
+    min-height: 100%;
+    background-color: #f8f8f8;
 }
 
 #root {
@@ -16,25 +17,30 @@ button {
     outline: none;
     background-color: slategray;
     border: none;
-    color: lightcoral;
-    transition: color .5s, background-color .5s;
+    color: rgb(126, 222, 216);
+    transition: color .5s, background-color .5s, opacity .5s;
 }
 
 button:hover {
     color: grey;
-    background-color: lightcoral;
+    background-color: rgb(126, 222, 216);
+}
+
+.lowerOpacity {
+  opacity: .5;
 }
 
 #calculator {
     margin: 0px;
     display: flex;
     flex-direction: column;
-    border: 1px solid grey;
+    border: 2px solid slategray;
     width: 95%;
     height: 95vh;
     max-width: 400px;
+    min-width: 320px;
     max-height: 700px;
-    background: linear-gradient(45deg, lightcoral 50%, coral);
+    background: linear-gradient(90deg, rgb(161, 238, 233) 50%, rgb(47, 186, 172));
 }
 
 #history {
@@ -158,10 +164,10 @@ button:hover {
 }
 
 .enableHistory {
-  border-right: 1px solid grey;
-  border-top: 1px solid grey;
-  border-bottom: 1px solid grey;
-  background: linear-gradient(-90deg, lightcoral, coral );
+  border-right: 2px solid slategray;
+  border-top: 2px solid slategray;
+  border-bottom: 2px solid slategray;
+  background: linear-gradient(-90deg, rgb(161, 238, 233) 50%, rgb(47, 186, 172));
   overflow-y: auto;
   width: 50%;
   height: 95vh;
@@ -180,10 +186,10 @@ button:hover {
 }
 
 .disableHistory {
-  border-right: 1px solid grey;
-  border-top: 1px solid grey;
-  border-bottom: 1px solid grey;
-  background: linear-gradient(-90deg, lightcoral, coral );
+  border-right: 2px solid slategray;
+  border-top: 2px solid slategray;
+  border-bottom: 2px solid slategray;
+  background: linear-gradient(-90deg, rgb(161, 238, 233) 50%, rgb(47, 186, 172));
   overflow-y: auto;
   width: 50%;
   height: 95vh;
@@ -213,7 +219,7 @@ button:hover {
   .enableHistory {
     display: inline;
     border-top: none;
-    border-left: 1px solid grey;
+    border-left: 2px solid slategray;
     margin: 0px;
     width: 100%;
     max-width: 400px;
@@ -228,7 +234,7 @@ button:hover {
   .disableHistory {
     display: inline;
     border-top: none;
-    border-left: 1px solid grey;
+    border-left: 2px solid slategray;
     margin: 0px;
     width: 100%;
     max-width: 400px;

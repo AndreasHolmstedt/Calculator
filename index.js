@@ -8,10 +8,14 @@ window.addEventListener("load", function () {
             history: [], // array consisting of all calculations made.
             memory: "",
             historySwitch: "enableHistory",
+            disableSquare: false,
+            opacity: "",
         },
         methods: {
             clear: function (evt) {
               //resets everything but history.
+                this.disableSquare = false;
+                this.opacity = "";
                 this.result = "";
                 this.memory = "";
                 this.toCalc = [];
@@ -45,7 +49,7 @@ window.addEventListener("load", function () {
               //then calculate the square of the number.
               if(this.memory){
                   let temp = this.memory * this.memory;
-                  this.history.push(`${this.memory} ^2 ${temp}`);
+                  this.history.push(`${this.memory} ^2 = ${temp}`);
                   this.memory = temp;
 
                   this.result = "";
@@ -53,7 +57,7 @@ window.addEventListener("load", function () {
               if(this.result){
                   let temp = this.result * this.result;
                   this.memory = temp;
-                  this.history.push(`${this.result} ^2 ${this.memory}`);
+                  this.history.push(`${this.result} ^2 = ${this.memory}`);
                   this.result = "";
 
               }
@@ -100,6 +104,8 @@ window.addEventListener("load", function () {
                 //check if a negative value should be calculated.
                 if(!this.result && !this.memory){
                   this.toCalc.push("-");
+                  this.disableSquare = true;
+                  this.opacity = "lowerOpacity";
                 }
                 this.memory = "";
                 this.result = "";
@@ -139,9 +145,6 @@ window.addEventListener("load", function () {
               if(this.toCalc.length == 0){
                 return;
               }
-
-
-
                 this.toCalc.push(this.result);
                 console.log("före while", this.toCalc);
                 //if last index of this.toCalc is not a number, remove it.
@@ -190,9 +193,17 @@ window.addEventListener("load", function () {
                     }
 
                 }
+
                 this.result = calculated;
                 this.clear();
                 this.memory = calculated;
+                if(this.memory > 0){
+                  this.disableSquare = false;
+                  this.opacity = "";
+                }else{
+                  this.disableSquare = true;
+                  this.opacity = "lowerOpacity";
+                }
                 this.history.push(`${toHistory} = ${calculated}`);
             },
             nr9: function (evt) {
