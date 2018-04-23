@@ -96,7 +96,10 @@ window.addEventListener("load", function () {
                 }
             },
             subtract: function (evt) {
-
+                console.log(this.toCalc[]);
+                if(this.toCalc[this.toCalc.length] == "-"){
+                  return;
+                }
                 // add - to the calculation.
                 if(this.memory){
                   this.toCalc.push(this.memory);
@@ -128,8 +131,6 @@ window.addEventListener("load", function () {
                     this.toCalc.push("+");
                     this.result = "";
                 }
-
-
             },
             comma: function (evt) {
               //add , to the result.
@@ -176,6 +177,25 @@ window.addEventListener("load", function () {
                    the toCalc array odd indexes are numbers and the equal indexes are operators.
                    We then iterate over the array and calculate numbers depending on the following operators
                    and save the result in the 'calculated' variable.*/
+
+                for(let i in this.toCalc){
+                  if(this.toCalc[i] == "-"){
+                    if(this.toCalc[i-1] == "+" ||
+                       this.toCalc[i-1] == "/" ||
+                       this.toCalc[i-1] == "*"){
+                         console.log(this.toCalc);
+                         console.log("this.toCalc[i]", this.toCalc[Number(i)+1]);
+
+                         this.toCalc[Number(i)+1] = Number(this.toCalc[Number(i)+1]) * -1;
+
+                         console.log(this.toCalc);
+                         this.toCalc.splice(Number(i), 1);
+                         console.log(this.toCalc);
+                       }
+                  }
+                }
+
+
                 for(let i in this.toCalc){
                     if(Number(i) < (this.toCalc.length - 1)){
                         switch(this.toCalc[i]){
