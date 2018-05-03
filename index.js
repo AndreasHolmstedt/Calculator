@@ -96,7 +96,6 @@ window.addEventListener("load", function () {
                 }
             },
             subtract: function (evt) {
-                console.log(this.toCalc[]);
                 if(this.toCalc[this.toCalc.length] == "-"){
                   return;
                 }
@@ -135,6 +134,9 @@ window.addEventListener("load", function () {
             comma: function (evt) {
               //add , to the result.
               if(this.result){
+                if(this.result.indexOf(".") != -1){
+                  return
+                }
                 this.result += "."
               }
             },
@@ -183,14 +185,9 @@ window.addEventListener("load", function () {
                     if(this.toCalc[i-1] == "+" ||
                        this.toCalc[i-1] == "/" ||
                        this.toCalc[i-1] == "*"){
-                         console.log(this.toCalc);
-                         console.log("this.toCalc[i]", this.toCalc[Number(i)+1]);
 
                          this.toCalc[Number(i)+1] = Number(this.toCalc[Number(i)+1]) * -1;
-
-                         console.log(this.toCalc);
                          this.toCalc.splice(Number(i), 1);
-                         console.log(this.toCalc);
                        }
                   }
                 }
